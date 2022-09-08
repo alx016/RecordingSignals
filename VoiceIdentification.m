@@ -12,17 +12,18 @@
 % pertenece la voz. 
 % Frase: La clase de señales es los lunes y los jueves 
 
-recording = audiorecorder(8000,16,1);%records audio data from the microphone;SamplingFrequency/Bitspersample/numberofChannels
+recording = audiorecorder(8000,16,1);%Assigns the wanted audio data from the microphone;SamplingFrequency/Bitspersample/numberofChannels
 disp('Start');
-recordblocking(recording, 5); %records for 5 senconds
+recordblocking(recording, 5); %Records for 5 senconds and assigns the wanted audio data
 disp('Stop');
-play(recording);//plays the recording
-recordingData = getaudiodata(recording);//saves the recording data in a new variable
-save ("audioM", "recordingData"); //saves the data in the computer HDD
+play(recording);%Plays the recording
+recordingData = getaudiodata(recording);%saves the recording data in a new variable
+save ("audioM", "recordingData"); %Saves the data in the computer HDD
 
-load audioM.mat
-curtosis = kurtosis(recordingData);%Curtosis
+load audioM.mat  %loads the saved data
+curtosis = kurtosis(recordingData);%Makes the analisis of the curtosis
 
+% This part returns whose the person in the recording, due to the limits we assign
 if (curtosis < 9)
     disp('Ariadna')
 elseif (curtosis < 15)

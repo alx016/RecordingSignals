@@ -1,12 +1,14 @@
 %% Experiment_1
 % Audio recording & collection of data
 
-%  recording = audiorecorder(8000,16,1);
+% Uncomment the next section if needed.
+
+%  recording = audiorecorder(8000,16,1); %applys a 8000 Hz, 16 bits per sample, and one number of chanels
 %  disp('Start');
-%  recordblocking(recording, 5);
+%  recordblocking(recording, 5); %makes a recording of 5 seconds
 %  disp('Stop');
 %  play(recording);
-%  recordingData = getaudiodata(recording);
+%  recordingData = getaudiodata(recording); %gets the important data out of the recording
 %  save ("audio", "recordingData");
 
 %% Part 2
